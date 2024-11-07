@@ -1,5 +1,5 @@
 # 💫 About Me:
-🎓Student of Applied Information Technology<br>Faculty of Electrical Engineering, Warsaw University of Technology<br><br>Hello! I'm a passionate student who is constantly expanding my knowledge and skills, especially in<br>the field of web development. I enjoy diving into new technologies and tackling complex projects<br>that help me grow as a developer.<br><br>🔍 Seeking Internship Opportunities<br>I'm currently looking for an intership where i can apply my skills in a real-world setting.<br><br>📫 Let's Connect<br>For inquiries, collaboration, or potential opportunities, please reach out via email at<br>norbert.gwiazda@icloud.com<br><br>
+🎓Student of Applied Information Technology<br>Faculty of Electrical Engineering, Warsaw University of Technology<br><br>Hello! I'm a passionate student who is constantly expanding his knowledge and skills, especially in<br>the field of web development. I enjoy diving into new technologies and tackling complex projects<br>that help me grow as a developer.<br><br>🔍 Seeking Internship Opportunities<br>I'm currently looking for an intership where i can apply my skills in a real-world setting.<br><br>📫 Let's Connect<br>For inquiries, collaboration, or potential opportunities, please reach out via email at<br>norbert.gwiazda@icloud.com<br><br>
 
 
 ## 🌐 Socials:
