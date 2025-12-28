@@ -18,7 +18,7 @@ jobs:
           # Required parameters
           filename: README.md
           template: markdown
-          markdown: README_TEMPLATE.md
+          markdown_template: README_TEMPLATE.md
           markdown_cache: .cache
           
           config_timezone: Europe/Warsaw
