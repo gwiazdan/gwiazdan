@@ -12,6 +12,7 @@ jobs:
       - uses: lowlighter/metrics@latest
         with:
           filename: metrics.svg
+          base: ""
           config_output: svg
           config_timezone: Europe/Warsaw
           
