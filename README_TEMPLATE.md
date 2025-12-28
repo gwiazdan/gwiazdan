@@ -4,7 +4,9 @@
 
 <%- await embed('languages-gwiazdan', { 
   languages:true, 
-  languages_ignored:"html,css,jupyter notebook,latex", 
+  languages_ignored:"html,css,latex",
+  languages_aliases: jupyter notebook=python,
   languages_limit:6, 
   languages_details:"percentage",
+  languages_colors: AC8E2DEE-30
 }) %>
