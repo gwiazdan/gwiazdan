@@ -23,11 +23,9 @@ jobs:
           markdown_cache: .cache
           
           config_timezone: Europe/Warsaw
+          config_padding: 20   
           config_display: regular
           config_output: svg
-          config_time_color: AC8E2DEE
-          config_text_color: 60D0FF
-          config_font: Fira Code
 
           # Optional parameters
           plugin_languages: yes
