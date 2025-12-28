@@ -21,11 +21,8 @@ jobs:
           base: header, activity, community, repositories, metadata
           base_hireable: yes
           base_indepth: yes
-          base_header_bio: |
-            Hi 👋, I'm Norbert!
-            Third year Student of Applied Computer Science,
-            Warsaw University of Technology.
-          config_display: regular
+          
+          config_display: large
           config_timezone: Europe/Warsaw
           plugin_16personalities: yes
           plugin_16personalities_scores: yes
@@ -44,7 +41,7 @@ jobs:
           plugin_languages_indepth: yes
           plugin_languages_limit: 6
           plugin_languages_aliases: >
-            "Jupyter Notebook=Python"
+            "Jupyter Notebook: Python"
           plugin_languages_other: yes
           plugin_languages_recent_days: 14
           plugin_languages_recent_load: 300
