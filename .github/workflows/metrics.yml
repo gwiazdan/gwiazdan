@@ -69,5 +69,13 @@ jobs:
         shell: bash
         env:
           GIST_ID: ${{ secrets.GIST_ID }}
-
+      - name: Commit & Push README
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add README.md
+          git commit -m "Update README with metrics [skip ci]" || exit 0
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
