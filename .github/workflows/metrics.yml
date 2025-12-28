@@ -57,9 +57,9 @@ jobs:
 
       - name: Update README
         run: |
-          SVG_CONTENT=$(curl -s https://gist.githubusercontent.com/gwiazdan/${{ secrets.GIST_ID }}/raw/metrics.svg)
-          cat > README.md << EOF        
-          $SVG_CONTENT
+          GIST_URL="https://gist.githubusercontent.com/gwiazdan/${{ secrets.GIST_ID }}/raw/metrics.svg"
+          cat > README.md << EOF          
+          ![Metrics]($GIST_URL)
           EOF
         shell: bash
         env:
