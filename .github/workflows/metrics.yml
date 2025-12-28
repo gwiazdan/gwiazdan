@@ -18,14 +18,9 @@ jobs:
           # Required parameters
           filename: README.md
           template: markdown
+          markdown_cache: .cache
           
           config_timezone: Europe/Warsaw
           config_display: regular
-
-          # Plugin options
-          plugin_languages: true
-          plugin_languages_ignored: html,css,jupyter notebook,latex
-          plugin_languages_limit: 6
-          plugin_languages_details: percentage
 
           token: ${{ secrets.METRICS_TOKEN }}
