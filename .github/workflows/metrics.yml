@@ -20,14 +20,19 @@ jobs:
           template: markdown
           markdown: >-
             README_TEMPLATE.md
+          markdown_cache: .cache
           
           config_timezone: Europe/Warsaw
           config_display: regular
           config_output: markdown
+          config_time_color: AC8E2DEE
+          config_text_color: 60D0FF
+          config_font: Fira Code
 
           # Optional parameters
           plugin_languages: yes
-          plugin_languages_ignored: html,css,jupyter notebook,latex
-          plugin_languages_limit: 6
+          plugin_languages_ignored: html,css,latex
+          plugin_languages_limit: 6,
+          plugin_languages_aliases: "jupyter notebook=python"
 
           token: ${{ secrets.METRICS_TOKEN }}
