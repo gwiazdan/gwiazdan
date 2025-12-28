@@ -31,7 +31,8 @@ jobs:
           plugin_languages: yes
           plugin_languages_ignored: html,css,latex
           plugin_languages_limit: 6
-          plugin_languages_aliases: "jupyter notebook=python"
+          plugin_languages_aliases: >
+            jupyter notebook=python
           plugin_languages_details: percentage
 
           token: ${{ secrets.METRICS_TOKEN }}
