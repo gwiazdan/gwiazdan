@@ -6,33 +6,37 @@ on:
   push: 
     branches: [main]
 jobs:
-  markdown:
+  metrics:
     runs-on: ubuntu-latest
-    environment:
-      name: production
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.svg
+          config_output: svg
+          config_timezone: Europe/Warsaw
+          
+          # Languages + bonus
+          plugin_languages: yes
+          plugin_languages_ignored: html,css,latex
+          plugin_languages_limit: 6
+          plugin_languages_details: percentage
+          plugin_languages_aliases: >
+            jupyter notebook=python
+          plugin_isocalendar: yes
+          plugin_notable: yes
+          
+          output_action: gist
+          committer_gist: ${{ secrets.GIST_ID }}
+          token: ${{ secrets.METRICS_TOKEN }}
+  readme:
+    needs: metrics
+    runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
       - uses: lowlighter/metrics@latest
         with:
-          # Required parameters
           filename: README.md
           template: markdown
-          markdown: >-
-            README_TEMPLATE.md
-          markdown_cache: .cache
-          
-          config_timezone: Europe/Warsaw
-          config_padding: 20   
-          config_display: regular
-          config_output: svg
-
-          # Optional parameters
-          plugin_languages: yes
-          plugin_languages_ignored: html,css,latex
-          plugin_languages_limit: 6
-          plugin_languages_aliases: >
-            jupyter notebook=python
-          plugin_languages_details: percentage
-
+          markdown_template: README_TEMPLATE.md
           token: ${{ secrets.METRICS_TOKEN }}
