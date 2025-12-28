@@ -1,26 +1,52 @@
-name: Metrics Markdown
+name: Metrics
 on:
+  schedule: [{cron: "0 * * * *"}]
   workflow_dispatch:
-  schedule: 
-  - cron: '0 */12 * * *'
-  push: 
-    branches: [main]
+  push: {branches: ["master", "main"]}
 jobs:
-  metrics:
+  github-metrics:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: lowlighter/metrics@latest
         with:
-          filename: metrics.svg
-          base: ""
-          config_output: svg
-          config_timezone: Europe/Warsaw
-          
-          plugin_languages: yes
-          plugin_languages_ignored: html,css,latex
-          plugin_languages_limit: 6
-          plugin_languages_details: percentage
-          
-          output_action: gist
-          committer_gist: ${{ secrets.GIST_ID }}
           token: ${{ secrets.METRICS_TOKEN }}
+          
+          user: gwiazdan
+          template: classic
+          base: header, activity, community, repositories, metadata
+          config_timezone: Europe/Warsaw
+          plugin_16personalities: yes
+          plugin_16personalities_scores: yes
+          plugin_16personalities_sections: personality
+          plugin_16personalities_url: https://www.16personalities.com/profiles/intp-t/m/3k2hbmhmr
+          plugin_activity: yes
+          plugin_activity_days: 14
+          plugin_activity_filter: all
+          plugin_activity_limit: 5
+          plugin_activity_load: 300
+          plugin_activity_visibility: all
+          plugin_introduction: yes
+          plugin_introduction_title: yes
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: half-year
+          plugin_languages: yes
+          plugin_languages_analysis_timeout: 15
+          plugin_languages_analysis_timeout_repositories: 7.5
+          plugin_languages_categories: markup, programming
+          plugin_languages_colors: github
+          plugin_languages_ignored: html, css
+          plugin_languages_limit: 6
+          plugin_languages_recent_categories: markup, programming
+          plugin_languages_recent_days: 14
+          plugin_languages_recent_load: 300
+          plugin_languages_sections: most-used
+          plugin_languages_threshold: 2%
+          plugin_people: yes
+          plugin_people_limit: 24
+          plugin_people_size: 28
+          plugin_people_types: followers, following
+          plugin_repositories: yes
+          plugin_repositories_order: featured, pinned, starred, random
+          plugin_repositories_pinned: 2
