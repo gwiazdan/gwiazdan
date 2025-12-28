@@ -22,8 +22,6 @@ jobs:
           plugin_languages_details: percentage
           plugin_languages_aliases: >
             jupyter notebook=python
-          plugin_isocalendar: yes
-          plugin_notable: yes
           
           output_action: gist
           committer_gist: ${{ secrets.GIST_ID }}
