@@ -15,26 +15,11 @@ jobs:
           config_output: svg
           config_timezone: Europe/Warsaw
           
-          # Languages + bonus
           plugin_languages: yes
           plugin_languages_ignored: html,css,latex
           plugin_languages_limit: 6
           plugin_languages_details: percentage
-          plugin_languages_aliases: >
-            jupyter notebook=python
           
           output_action: gist
           committer_gist: ${{ secrets.GIST_ID }}
-          token: ${{ secrets.METRICS_TOKEN }}
-  readme:
-    needs: metrics
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - uses: lowlighter/metrics@latest
-        with:
-          filename: README.md
-          template: markdown
-          markdown_template: README_TEMPLATE.md
           token: ${{ secrets.METRICS_TOKEN }}
