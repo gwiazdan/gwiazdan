@@ -1,0 +1,24 @@
+name: Metrics Markdown
+on:
+  schedule: [{cron: "0 */6 * * *"}]  # Co 6h
+  workflow_dispatch:
+jobs:
+  markdown:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          template: markdown
+          filename: README.md
+          markdown: >-
+            https://raw.githubusercontent.com/lowlighter/metrics/master/source/templates/markdown/example.md
+          config_output: markdown
+          config_timezone: Europe/Warsaw
+          plugin_languages: yes
+          plugin_languages_ignored: html,css,jupyter notebook,latex
+          plugin_languages_limit: 6
+          plugin_languages_details: percentage,bytes-size
+          plugin_isocalendar: yes
+          plugin_activity: yes
+          plugin_activity_limit: 7
+          token: ${{ secrets.METRICS_TOKEN }}
