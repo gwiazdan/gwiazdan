@@ -1,10 +1,10 @@
 name: Metrics
 on:
   schedule:
-    - cron: '0 0 * * *'  
+    - cron: '0 0 * * *'
   workflow_dispatch:
-  push: 
-    branches: 
+  push:
+    branches:
       - main
 jobs:
   github-metrics:
@@ -22,7 +22,7 @@ jobs:
           base: header, activity, community, repositories, metadata
           base_hireable: yes
           base_indepth: yes
-          
+
           config_display: large
           config_timezone: Europe/Warsaw
           plugin_16personalities: yes
@@ -45,13 +45,14 @@ jobs:
           plugin_languages_recent_load: 300
           plugin_languages_sections: most-used
           plugin_languages_threshold: 0%
+          plugin_languages_ignored: Jupyter Notebook, Typst
           plugin_people: yes
           plugin_people_limit: 24
           plugin_people_size: 28
           plugin_people_types: followers, following
           plugin_repositories: yes
+          plugin_repositories_featured: respiratory-sound-analysis, math-workspace
           plugin_repositories_order: featured, pinned, starred, random
-          plugin_repositories_pinned: 2
 
           output_action: gist
           committer_gist: ${{ secrets.GIST_ID }}
@@ -66,7 +67,7 @@ jobs:
       - name: Update README
         run: |
           GIST_URL="https://gist.githubusercontent.com/gwiazdan/${{ secrets.GIST_ID }}/raw/metrics.svg"
-          cat > README.md << EOF          
+          cat > README.md << EOF
           ![Metrics]($GIST_URL)
           EOF
         shell: bash
@@ -81,4 +82,3 @@ jobs:
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
