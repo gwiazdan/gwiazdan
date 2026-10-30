@@ -1,1 +1,1 @@
-![Metrics](https://gist.githubusercontent.com/gwiazdan/98898a8c2b87acea2f772c361e3440a3/raw/metrics.svg)
+![Metrics](https://gist.githubusercontent.com/gwiazdan/0fa77592c19f9e2667655550a4ac2009/raw/metrics.svg)
